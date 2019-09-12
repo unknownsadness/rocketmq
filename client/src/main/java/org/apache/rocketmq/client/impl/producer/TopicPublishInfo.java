@@ -24,11 +24,11 @@ import org.apache.rocketmq.common.protocol.route.QueueData;
 import org.apache.rocketmq.common.protocol.route.TopicRouteData;
 
 public class TopicPublishInfo {
-    private boolean orderTopic = false;
-    private boolean haveTopicRouterInfo = false;
-    private List<MessageQueue> messageQueueList = new ArrayList<MessageQueue>();
-    private volatile ThreadLocalIndex sendWhichQueue = new ThreadLocalIndex();
-    private TopicRouteData topicRouteData;
+    private boolean orderTopic = false;// 是否订阅了主题
+    private boolean haveTopicRouterInfo = false;// 是否有主题的路由信息
+    private List<MessageQueue> messageQueueList = new ArrayList<MessageQueue>();// 装消息队列的列表
+    private volatile ThreadLocalIndex sendWhichQueue = new ThreadLocalIndex();// 每个消息队列对应的下标
+    private TopicRouteData topicRouteData;// 主题的路由的相关的信息
 
     public boolean isOrderTopic() {
         return orderTopic;

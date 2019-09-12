@@ -228,6 +228,7 @@ public class BrokerController {
     }
 
     public boolean initialize() throws CloneNotSupportedException {
+        // topic 配置管理器初始化
         boolean result = this.topicConfigManager.load();
 
         result = result && this.consumerOffsetManager.load();
@@ -822,6 +823,7 @@ public class BrokerController {
     }
 
     public void start() throws Exception {
+        // 持久化消息服务启动
         if (this.messageStore != null) {
             this.messageStore.start();
         }
